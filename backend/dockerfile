@@ -1,0 +1,10 @@
+# backend/Dockerfile
+FROM tiangolo/uvicorn-gunicorn-fastapi:python3.9
+
+# Skopiuj plik requirements.txt do kontenera
+COPY requirements.txt requirements.txt
+
+# Zainstaluj zależności
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY . .
